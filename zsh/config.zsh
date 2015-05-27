@@ -2,34 +2,35 @@ fpath=($DOTFILES/functions $fpath)
 
 autoload -U $DOTFILES/functions/*(:t)
 
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
-
-setopt NO_BG_NICE # don't nice background tasks
-setopt NO_HUP
 setopt NO_LIST_BEEP
+
 # setopt LOCAL_OPTIONS # allow functions to have local options
 # setopt LOCAL_TRAPS # allow functions to have local traps
-setopt HIST_VERIFY
-setopt SHARE_HISTORY # share history between sessions ???
-setopt EXTENDED_HISTORY # add timestamps to history
+
 setopt PROMPT_SUBST
 setopt CORRECT
 setopt COMPLETE_IN_WORD
 setopt IGNORE_EOF
 
-setopt APPEND_HISTORY # adds history
-setopt INC_APPEND_HISTORY SHARE_HISTORY  # adds history incrementally and share it across sessions
-setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
-setopt HIST_REDUCE_BLANKS
+# Sublime text keybindings
+bindkey ';5D' backward-word
+bindkey ';3D' backward-word
+bindkey ';5C' forward-word # In sublime, there is a slight difference between alt and ctrl.
+bindkey ';3C' forward-word
+bindkey "$terminfo[kend]" end-of-line # Fn + right
+bindkey "$terminfo[khome]" beginning-of-line # Fn + left
 
-zle -N newtab
+# TODO
+# shift-arrow() {
+#   ((REGION_ACTIVE)) || zle set-mark-command
+#   zle $1
+# }
+# shift-left() shift-arrow backward-char
+# shift-right() shift-arrow forward-char
 
-bindkey '^[^[[D' backward-word
-bindkey '^[^[[C' forward-word
-bindkey '^[[5D' beginning-of-line
-bindkey '^[[5C' end-of-line
-bindkey '^[[3~' delete-char
-bindkey '^[^N' newtab
-bindkey '^?' backward-delete-char
+# zle -N shift-left
+# zle -N shift-right
+
+
+# bindkey ';2D' shift-left
+# bindkey ';2C' shift-right
