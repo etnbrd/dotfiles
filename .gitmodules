@@ -1,6 +1,3 @@
-[submodule "git/scm_breeze"]
-	path = git/scm_breeze
-	url = git@github.com:etnbrd/scm_breeze.git
 [submodule "zsh/prezto"]
 	path = zsh/prezto
 	url = git@github.com:etnbrd/prezto.git
