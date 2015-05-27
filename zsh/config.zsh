@@ -3,10 +3,6 @@ fpath=($DOTFILES/functions $fpath)
 autoload -U $DOTFILES/functions/*(:t)
 
 setopt NO_LIST_BEEP
-
-# setopt LOCAL_OPTIONS # allow functions to have local options
-# setopt LOCAL_TRAPS # allow functions to have local traps
-
 setopt PROMPT_SUBST
 setopt CORRECT
 setopt COMPLETE_IN_WORD

@@ -12,9 +12,17 @@ then
 fi
 
 
+
+# export TAG='arch'
+
+setopt LOCAL_OPTIONS EXTENDED_GLOB
+
 # all of our zsh files
+# The regex match every topic without any TAG or with the specified TAG
+# This allow to specify topics for particular configurations
+# TODO allow multiple tags, and strengthen this regex
 typeset -U config_files
-config_files=($DOTFILES/*/*.zsh)
+config_files=($DOTFILES/(^*\[*\]|*\[$TAG\])/*.zsh)
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}
