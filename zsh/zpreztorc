@@ -36,6 +36,7 @@ zstyle ':prezto:load' pmodule \
   'node' \
   'pacman' \
   'ssh' \
+  'systemd'\
   'prompt'
 
 #
