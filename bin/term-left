@@ -1,1 +1,1 @@
-stjerm -k escape -m shift -p topleft &
+stjerm -k escape -m shift -p left &

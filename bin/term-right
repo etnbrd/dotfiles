@@ -1,1 +1,1 @@
-stjerm -k XF86PowerOff -m shift -p topright &
+stjerm -k XF86PowerOff -m shift -p right &

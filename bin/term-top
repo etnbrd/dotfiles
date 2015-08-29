@@ -1,0 +1,2 @@
+stjerm -k XF86LaunchA -p top -w 100% -h 100% &
+stjerm -k XF86LaunchB -p top -w 100% -h 100% &
