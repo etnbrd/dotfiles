@@ -9,7 +9,7 @@ Your dotfiles are how you personalize your system. These are mine.
 
 ## install
 
-Run this:
+Be sure to have `git` and `zsh` installed, and then run this:
 
 ```sh
 git clone https://github.com/etnbrd/dotfiles.git ~/.dotfiles
