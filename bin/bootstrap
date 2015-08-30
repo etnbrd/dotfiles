@@ -2,7 +2,7 @@
 # bootstrap installs things.
 
 cd "$(dirname "$0")/.."
-DOTFILES_ROOT=$(pwd)
+DOTFILES=$(pwd)
 
 set -e
 
@@ -14,8 +14,8 @@ then
   source ~/.localrc
 fi
 
-source $DOTFILES_ROOT/functions/prompts
-source $DOTFILES_ROOT/functions/topics
+source $DOTFILES/functions/prompts
+source $DOTFILES/functions/topics
 
 link_file () {
   local src=$1 dst=$2
