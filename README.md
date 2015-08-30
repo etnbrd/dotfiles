@@ -14,7 +14,7 @@ Run this:
 ```sh
 git clone https://github.com/etnbrd/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-nano .localrc
+vim .localrc
 cp .localrc ~
 bin/bootstrap
 ```
