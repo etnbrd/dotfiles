@@ -8,3 +8,7 @@ p_info 'Update'
 sudo apt-get update
 
 # TODO pull / push .dotfiles and so on (SCM_breeze, Prezto ...)
+# ( cd $DOTFILES
+# git pull
+# git submodule foreach git pull origin master
+# )
