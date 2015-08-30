@@ -11,26 +11,23 @@ then
   source ~/.localrc
 fi
 
-
-
-# export TAG='arch'
+source $DOTFILES/functions/topics
 
 setopt LOCAL_OPTIONS EXTENDED_GLOB
 
-# all of our zsh files
-# The regex match every topic without any TAG or with the specified TAG
-# This allow to specify topics for particular configurations
-# TODO allow multiple tags, and strengthen this regex
-typeset -U config_files
-config_files=($DOTFILES/(^*\[*\]|*\[$TAG\])/*.zsh)
+# Get the list of topic, filtered by tags
+dotfiles_topics $TAGS
 
-# load the path files
+# Find every zsh files within the filtered_folders
+config_files=($(find -H "${filtered_folders[@]}" -maxdepth 1 -name '*.zsh'))
+
+# # load the path files
 for file in ${(M)config_files:#*/path.zsh}
 do
   source $file
 done
 
-# load everything but the path and completion files
+# load everything but the path files
 for file in ${config_files:#*/path.zsh}
 do
   source $file

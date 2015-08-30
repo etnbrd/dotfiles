@@ -1,0 +1,6 @@
+# The tag allows you to select only parts of the dotfiles to install on this machine.
+# Currently, only one tag can be set at once, and only one tag can be specified per folder.
+# I intend to improve that, but currently lacks the time and skills to do that correctly in zsh.
+
+# export TAGS='arch'
+# export TAGS='ubuntu'

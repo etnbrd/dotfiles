@@ -14,6 +14,8 @@ Run this:
 ```sh
 git clone https://github.com/etnbrd/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
+nano .localrc
+cp .localrc ~
 bin/bootstrap
 ```
 
@@ -23,24 +25,18 @@ Everything is configured and tweaked within `~/.dotfiles`.
 The main file you'll want to change right off the bat is `zsh/zshrc.symlink`,
 which sets up a few paths that'll be different on your particular machine.
 
-## topical
-
-Everything is built around topic areas.
-A topic is a directory.
-If you're adding a new area to your dotfiles — say, "Java" — you can simply add a `java` directory and put files in there. Anything with an extension of `.zsh` will be sourced from `zshrc`. Anything with an extension of `.symlink` will get symlinked without extension into `$HOME` when you run `script/bootstrap`.
-
 ## tags
 
 Topics can be common for all your architecture, or can be specified by tags.
 If you want to have an arch-linux specific topic, you can specify it in the name of the topic : `system[arch]`
 In `zshrc` you can then specify which tags to load (for the moment, only one tag can be loaded, and only one tag can be specified by topic).
 
-## components
+## topics
 
-There's a few special files in the hierarchy.
+Everything is built around topic areas.
+A topic is a directory.
+If you're adding a new area to your dotfiles — say, "Java" — you can simply add a `java` directory and put files in there.
 
-- **bin/**: Anything in `bin/` will get added to your `$PATH` and be made
-  available everywhere.
 - **topic/\*.zsh**: Any files ending in `.zsh` get loaded into your
   environment.
 - **topic/path.zsh**: Any file named `path.zsh` is loaded first and is
@@ -49,6 +45,11 @@ There's a few special files in the hierarchy.
   your `$HOME`. This is so you can keep all of those versioned in your dotfiles
   but still keep those autoloaded files in your home directory. These get
   symlinked in when you run `script/bootstrap`.
+
+### The bin topic
+
+- **bin/**: Anything in `bin/` will get added to your `$PATH` and be made
+  available everywhere.
 
 ## bugs
 

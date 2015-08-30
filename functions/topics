@@ -1,0 +1,40 @@
+# Usage: dotfiles_topics <tags>
+# Description: filter the topics according to the given list of tags, and return the result into folders
+dotfiles_topics () {
+  filtered_folders=() # the filtered list of folders to return
+  local re="\[(.*)\]" # regex to capture the list of tags
+
+  for folder in $DOTFILES/*/
+  do
+
+    # extract tags list from each folder basename
+    if [[ $(basename $folder) =~ $re ]]
+    then
+
+      # depending on the execution context, the match tags are not set in the same parameter
+      # TODO fix this
+      if [[ -n "${match[1]}" ]]
+      then
+        matched_tags=${match[1]}
+      else
+        matched_tags=${BASH_REMATCH[1]}
+      fi
+
+      # split the extracted matched list of tags into an array of tags
+      IFS=',' read tags <<< "$matched_tags"
+
+      # Test each extracted tags against the list of tags passed in parameters
+      # If at least one of the extracted tags match the list, then add the current folder to the list of filtered folders
+      for tag in ${tags[@]}
+      do
+        if [[ $1 =~ $tag ]] ; then
+          filtered_folders+=( $folder )
+        fi
+      done
+    # if there is no bracket, there is no tags, and the regex doesn't match.
+    # Add the current folder to the list of filtered folders
+    else
+      filtered_folders+=( $folder )
+    fi
+  done
+}
