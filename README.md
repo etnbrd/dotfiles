@@ -6,20 +6,25 @@ Uses [Prezto](https://github.com/etnbrd/prezto) and [SCM_Breeze](https://github.
 ## dotfiles
 
 Your dotfiles are how you personalize your system. These are mine.
+I have several machines, and I want to keep the same dotfiles repository everywhere.
+I created a tagging system to filter out some dotfiles on some machines, while keeping most dotfiles commons.
 
 ## install
 
 Be sure to have `git` and `zsh` installed, and then run this:
 
 ```sh
-git clone https://github.com/etnbrd/dotfiles.git ~/.dotfiles
+git clone --recursive https://github.com/etnbrd/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 vim .localrc
 cp .localrc ~
 bin/bootstrap
 ```
 
-This will symlink the appropriate files in `.dotfiles` to your home directory.
+
+`.localrc` contains the different tags you want to apply on your current machine.
+
+`bin/bootstrap` will symlink the appropriate files in `.dotfiles` to your home directory.
 Everything is configured and tweaked within `~/.dotfiles`.
 
 The main file you'll want to change right off the bat is `zsh/zshrc.symlink`,
