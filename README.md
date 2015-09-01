@@ -11,13 +11,10 @@ I created a tagging system to filter out some dotfiles on some machines, while k
 
 ## install
 
-Be sure to have `git` and `zsh` installed, and then run this:
-
 ```sh
 git clone --recursive https://github.com/etnbrd/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
-vim .localrc
-cp .localrc ~
+cp .dotfiles/.localrc ~
+vim ~/.localrc
 bin/bootstrap
 ```
 
@@ -27,14 +24,13 @@ bin/bootstrap
 `bin/bootstrap` will symlink the appropriate files in `.dotfiles` to your home directory.
 Everything is configured and tweaked within `~/.dotfiles`.
 
-The main file you'll want to change right off the bat is `zsh/zshrc.symlink`,
-which sets up a few paths that'll be different on your particular machine.
-
 ## tags
 
 Topics can be common for all your architecture, or can be specified by tags.
 If you want to have an arch-linux specific topic, you can specify it in the name of the topic : `system[arch]`
-In `zshrc` you can then specify which tags to load (for the moment, only one tag can be loaded, and only one tag can be specified by topic).
+In `.localrc` you can then specify which tags to load.
+Tags are comma separated.
+As an example a topic like `system[arch,dev]` would match the tags `TAGS=ubuntu,dev`, because of the tag dev.
 
 ## topics
 
@@ -66,6 +62,12 @@ something if I forget to make a check for a dependency.
 If you're brand-new to the project and run into any blockers, please
 [open an issue](https://github.com/holman/dotfiles/issues) on this repository
 and I'd love to get it fixed for you!
+
+## todos
+
++ Rename tags into something more meaningful : characteristics, traits ...
++ Remove SCM, and use the default prezto git plugin
++ Create a private submodule containing all the credentials and other sensitive informations
 
 ## thanks
 
