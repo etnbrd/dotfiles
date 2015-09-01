@@ -3,7 +3,11 @@
 # `update` handles installation, updates, things like that. Run it periodically
 # to make sure you're on the latest and greatest.
 
-p_info 'Update'
+# TODO these functinos should be made available by fpath
+# I don't understand why. Maybe zsh understand one function per file
+source $DOTFILES/functions/prompts
+
+p_info 'Update\n\n'
 
 yaourt -Suya
 

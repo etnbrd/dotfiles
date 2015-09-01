@@ -2,5 +2,5 @@
 # Currently, only one tag can be set at once, and only one tag can be specified per folder.
 # I intend to improve that, but currently lacks the time and skills to do that correctly in zsh.
 
-# export TAGS='arch'
+# export TAGS='arch,dev'
 # export TAGS='ubuntu'
