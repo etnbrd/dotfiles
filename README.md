@@ -65,11 +65,13 @@ and I'd love to get it fixed for you!
 
 ## todos
 
++ Update scripts
 + Rename tags into something more meaningful : characteristics, traits ...
 + Remove SCM, and use the default prezto git plugin
 + Create a private submodule containing all the credentials and other sensitive informations
++ Continue git status in prompt (git status icons)
++ move personal prompt to external, into a submodule
 
 ## thanks
 
 Thanks to [@holman](https://github.com/holman) from who I forked the [dotfiles](https://github.com/holman/dotfiles), and then deleted everything, except the excellent structure :)
-

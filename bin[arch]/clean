@@ -1,0 +1,12 @@
+# clean
+#
+# `clean` removes ununsed things.
+# Run it periodically to keep things fresh and running.
+
+p_info 'Purge\n\n'
+
+# Remove orphan packages
+sudo pacman -Rsn $(pacman -Qdtq)
+
+# Remove uninstalled package cache
+sudo pacman -Sc
