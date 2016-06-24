@@ -1,1 +1,1 @@
-stjerm -k escape -m shift -p left &
+sh -c 'while true; do stjerm -k escape -m shift -p left; done'
