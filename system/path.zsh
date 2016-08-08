@@ -9,7 +9,7 @@ do
   fi
 done
 
-export PATH="./bin:/usr/local/bin:/usr/local/sbin:$bin_folders:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:$bin_folders:$PATH"
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
 
 unset bin_folders
