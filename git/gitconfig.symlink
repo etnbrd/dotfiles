@@ -24,3 +24,6 @@
         ui = true
 [alias]
         co = checkout
+[user]
+	email = etn@etnbrd.com
+	name = Etienne Brodu
