@@ -1,0 +1,5 @@
+vte-terminal,
+terminal-window {
+    padding: 1em 3em 1em 3em;
+    -VteTerminal-inner-border: 1em 3em 1em 3em;
+}
