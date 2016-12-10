@@ -4,4 +4,4 @@ env:
 language:
   - shell
 script:
-- ./post-build.sh
+  - ./post-build.sh
