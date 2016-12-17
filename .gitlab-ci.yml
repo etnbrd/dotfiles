@@ -1,0 +1,3 @@
+dependencies:
+  script:
+    - "curl -X POST -F token=$devenv_trigger -F ref=master https://gitlab.com/api/v3/projects/2144111/trigger/builds"
